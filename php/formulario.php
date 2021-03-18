@@ -191,7 +191,7 @@ $Body .= "En los próximos días el Distribuidor de tu zona se comunicará conti
 para acordar los detalles de tu solicitud.";  
 $Body .= "\n";
 $Body .= "Para más información entra en nuestra web skylubricantes.com
-Si deseas compartir el link para que amigos o aliados se registren, lo puedes hacer aquí skylubricantes.com/landing";
+Si deseas compartir el link para que amigos o aliados se registren, lo puedes hacer aquí aliado.skylubricantes.com/";
 
 $success = mail($Emailcliente, $Subject, $Body, "From:".$from);   
 
