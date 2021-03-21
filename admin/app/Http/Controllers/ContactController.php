@@ -10,63 +10,27 @@ use Mail;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Se ordenan desde el mas nuevo
-        $contacts = Contact::orderBy('created_at', 'DESC')->get();
+        $contacts = Contact::all();
+
         return view('backend.contacts.index', compact('contacts'));
     }
     public function store(Request $request)
     {
-        // Se validan los datos que envia el cliente
 
         $data = $request->validate([
-            'name'      => 'required|string',
-            'email'     => 'required|email|string|unique:contacts,email',
-            'phone'     => 'required|min:5',
-            'city'      => 'required|min:5'
+            'name'      => '',
+            'email'     => '',
+            'phone'     => '',
+            'rif'     => '',
+            'city'      => '',
+            'state'      => '',
         ]);
 
-        // Correo para el cliente
 
-        $to_name    = $data['name'];
-        $to_email   = $data['email'];
-        $emailData  = $data;
+        Contact::create($data);
 
-        
-        Mail::to($to_email)->send(new ClientMail($data));
-        // try {
-        // } catch (\Throwable $th) {
-        //     dd($th);
-        // }
-        
-        // // Correo para mily
-        
-        // $to_name    = $data['name'];
-        // $to_email   = 'mili.paris@inter.com.ve';
-        // $emailData  = $data;
-        
-        // try {
-        //     Mail::to($to_email)->send(new ProviderMail($data));
-        // } catch (\Throwable $th) {
-        //     return view('contacts.failure');
-        // }
-
-        // // Correo para tconecta
-        
-        // $to_name    = $data['name'];
-        // $to_email   = 'Tconectainalambrico@gmail.com';
-        // $emailData  = $data;
-        
-        // try {
-        //     Mail::to($to_email)->send(new ProviderMail($data));
-        // } catch (\Throwable $th) {
-        //     return view('contacts.failure');
-        // }
-
-        // Finalmente, si no surje ningun error, se guarda todo en la base de datos
-        // Contact::create($data);
-    
-        // return view('contacts.success');
+        return response()->json($data, 201);
     }
 }

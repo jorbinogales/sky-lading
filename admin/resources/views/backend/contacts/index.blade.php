@@ -8,9 +8,9 @@
 @endsection
 
 @section('content')
-    
+
 <div class="container-fluid mt-4 mb-5">
-    
+
     <div class="row">
         <div class="col-md-12">
                 <h2 class="">Lista de personas que han contactado</h2>
@@ -19,9 +19,10 @@
                     <table class="table table-hover mt-3 dataTable">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">RIF</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Correo</th>
+                                <th scope="col">Estado</th>
                                 <th scope="col">Ciudad</th>
                                 <th scope="col">Telefono</th>
                                 <th scope="col">Fecha</th>
@@ -30,16 +31,17 @@
                         <tbody>
                             @foreach ($contacts as $contact)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $contact->rif }}</td>
                                     <td>{{ $contact->name }}</td>
                                     <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->state }}</td>
                                     <td>{{ $contact->city }}</td>
                                     <td>{{ $contact->phone }}</td>
                                     <td>{{ $contact->created_at->format('d/m/Y g:i a') }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
-    
+
                     </table>
                 </div>
 
@@ -65,6 +67,6 @@
                 }
             });
         });
-    
+
     </script>
-@endsection 
+@endsection

@@ -12,10 +12,10 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         App\User::truncate();
-        
+
         factory(App\User::class)->create([
             'name' => 'Admin',
-            'email' => 'admin@tconecta.com'
+            'email' => 'admin@skylubricantes.com'
         ]);
     }
 }
