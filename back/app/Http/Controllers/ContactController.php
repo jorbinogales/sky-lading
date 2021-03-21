@@ -23,11 +23,12 @@ class ContactController extends Controller
             'name'      => '',
             'email'     => '',
             'phone'     => '',
-            'rif'     => '',
+            'rif'       => '',
             'city'      => '',
-            'state'      => '',
+            'state'     => '',
         ]);
 
+        // dd($request);
 
         Contact::create($data);
 

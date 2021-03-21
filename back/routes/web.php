@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
+Route::get('/', function ()
+{
+    return redirect()->route('login');
+});
+
 // Redireccionando al login
 Route::get('/admin', function ()
 {
