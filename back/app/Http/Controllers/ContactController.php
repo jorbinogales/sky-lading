@@ -20,17 +20,24 @@ class ContactController extends Controller
     {
 
         $data = $request->validate([
-            'name'      => '',
+            'nombre'      => '',
             'email'     => '',
-            'phone'     => '',
+            'telefono'     => '',
             'rif'       => '',
-            'city'      => '',
-            'state'     => '',
+            'ciudad'      => '',
+            'estado'     => '',
         ]);
 
         // dd($request);
 
-        Contact::create($data);
+        Contact::create([
+            'name' => $data['nombre'],
+            'email' => $data['email'],
+            'phone' => $data['telefono'],
+            'rif' => $data['rif'],
+            'state' => $data['estado'],
+            'city' => $data['ciudad']
+        ]);
 
         return response()->json($data, 201);
     }
