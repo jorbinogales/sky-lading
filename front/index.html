@@ -2610,10 +2610,12 @@
 								$('.formulario').html(message); 
 							},
 							error: function(xhr, status, error){
+								console.log(status, error);
 								var message = "<p style='font-size: 19px;font-weight: 700;color: #851212;line-height: 27px;'>Tu mensaje no fue enviado</p>";  
 								$('.errors').html(message); 
 							}
 						});
+
 
 					},
 					error: function (xhr, status, error) {
