@@ -2602,15 +2602,13 @@
 						$.ajax({
 							type: 'POST',
 							url: 'php/formulario.php',
-							dataType: "json",
 							data: formData,
-							success: function(response) { 
+							success: function () { 
 								$(form).hide(); //sets css display:none to form
 								var message = "<p style='font-size: 19px;font-weight: 700;color: #128512;line-height: 27px;'>Tu mensaje fue enviado,<br> pronto nos estaremos comunicando!</p>";  
 								$('.formulario').html(message); 
 							},
-							error: function(xhr, status, error){
-								console.log(status, error);
+							error: function (xhr, status, error){
 								var message = "<p style='font-size: 19px;font-weight: 700;color: #851212;line-height: 27px;'>Tu mensaje no fue enviado</p>";  
 								$('.errors').html(message); 
 							}
