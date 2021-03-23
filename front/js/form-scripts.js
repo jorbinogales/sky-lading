@@ -15,14 +15,16 @@ function submitForm(){
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
-    var phone = $("#phone").val();
+    var telefono = $("#telefono").val();
     var rif = $("#rif").val();
+    var ciudad = $("#ciudad").val();
+    var estado = $("#estado").val();
     
 
     $.ajax({
         type: "POST",
         url: "../php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&rif=" + rif,
+        data: "name=" + name + "&email=" + email + "&telefono=" + telefono + "&rif=" + rif + "&ciudad=" + ciudad + "&estado=" + estado,
         success : function(text){
             if (text == "Hecho"){
                 formSuccess();

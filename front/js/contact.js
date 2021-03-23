@@ -10,21 +10,25 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
+            var phone = $("input#telefono").val();
             var rif = $("textarea#rif").val();
+            var ciudad = $("textarea#ciudad").val();
+            var estado = $("textarea#estado").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "php/form-process.php",
+                url: "php/formulario.php",
                 type: "POST",
                 data: {
                     name: name,
-                    phone: phone,
+                    telefono: telefono,
                     email: email,
-                    rif: rif
+                    rif: rif,
+                    ciudad: ciudad,
+                    estado: estado,
                 },
                 cache: false,
                 success: function() {
