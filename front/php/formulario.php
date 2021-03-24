@@ -123,8 +123,7 @@ else{ echo json_encode(['success'=>false]);}
 if ($zona == "Centro-occidente") {
 
 
-  // $to      = 'jlmarin@keystone.net.ve';
-  $to      = 'jonnathan.c.765@gmail.com';
+  $to      = 'jlmarin@keystone.net.ve';
   $subject = "Un nuevo cliente";
 
   $Body = "¡Hola José Leonardo Marín! Un nuevo cliente en tu zona espera tu llamada!<br>";
