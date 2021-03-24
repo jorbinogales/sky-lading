@@ -168,7 +168,6 @@ if ($zona == "Centro-occidente") {
 
    $enviado = sendMail($to, $subject, $Body);
 
-
 }
 
 
