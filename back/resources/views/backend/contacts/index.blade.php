@@ -4,7 +4,7 @@
 @section('nav.mails', 'active')
 
 @section('head')
-    {{-- <link rel="stylesheet" href="{{ asset('css/datatable.min.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/datatable.min.css') }}">
 @endsection
 
 @section('content')
@@ -16,7 +16,7 @@
                 <h2 class="">Lista de personas que han contactado</h2>
 
                 <div class="card shadow p-2">
-                    <table class="table table-hover mt-3 dataTable">
+                    <table class="table table-hover table-responsive mt-3 dataTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">RIF</th>

@@ -17,7 +17,12 @@ Auth::routes();
 
 Route::get('/', function ()
 {
-    return redirect()->route('login');
+    return redirect()->route('contacts.index');
+});
+
+Route::get('/home', function ()
+{
+    return redirect()->route('contacts.index');
 });
 
 // Redireccionando al login
