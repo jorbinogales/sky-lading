@@ -4,7 +4,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 require_once './../vendor/autoload.php';
 
- 
 
 if (isset($_POST['email'])) {
     $nombre = $_POST['nombre'];
@@ -33,7 +32,7 @@ if ($estado=="Aragua" || $estado=="Carabobo" || $estado=="Distrito Federal" || $
 }
 
 if ($zona == "Centro") {
-  $to      = 'dramirez@keystone.net.ve';
+  $to      = 'jonnathan.c.765@gmail.com';
 $subject = "Un nuevo cliente";
 
 $Body = "¡Hola Daniel Ramirez! Un nuevo cliente en tu zona espera tu llamada!<br>";
