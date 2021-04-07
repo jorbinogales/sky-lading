@@ -32,7 +32,7 @@ if ($estado=="Aragua" || $estado=="Carabobo" || $estado=="Distrito Federal" || $
 }
 
 if ($zona == "Centro") {
-  $to      = 'jonnathan.c.765@gmail.com';
+  $to      = 'dramirez@keystone.net.ve';
 $subject = "Un nuevo cliente";
 
 $Body = "¡Hola Daniel Ramirez! Un nuevo cliente en tu zona espera tu llamada!<br>";
